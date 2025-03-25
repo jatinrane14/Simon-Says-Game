@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <main>
+        <div class="header">
+            <h1>Simon Says game</h1>
+            <p class="currentState">Press Any key to Start!</p>
+        </div>
+        <div class="game-container">
+            <button class="color-panel green"></button>
+            <button class="color-panel red"></button>
+            <button class="color-panel yellow"></button>
+            <button class="color-panel blue"></button>
+            <div class="center-button"><span>SIMON</span></div>
+        </div>
+    </main>
+
+    <button class="fullscr-btn" onclick="toggleFullscreen()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"></path></svg>
+    </button>
+    <script src="assets/scipt.js"></script>
+    <script>
+        function toggleFullscreen() {
+            let elem = document.querySelector("main");
+
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch((err) => {
+                    alert(
+                        `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`,
+                    );
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
